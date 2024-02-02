@@ -33,7 +33,7 @@ checkButton.onclick = () => {
     ? `${primaryView.value}\0${incrementalView.value}`
     : primaryView.value;
   console.log(body);
-  fetch("https://twelflive.onrender.com/eval", { method: "POST", body })
+  fetch("https://twelf-live-worker.onrender.com/eval", { method: "POST", body })
     .then((response) => response.json())
     .then((response) => {
       if (response.error) {
@@ -46,4 +46,12 @@ checkButton.onclick = () => {
     });
 };
 
-console.log("Hey");
+/* Attempt to wake up server */
+fetch("https://twelf-live-worker.onrender.com/eval", {
+  method: "POST",
+  body: "nat: type.",
+})
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(`Server responded ${response.server ?? "incorrectly"}`);
+  });
