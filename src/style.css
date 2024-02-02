@@ -1,0 +1,84 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#app {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wrap {
+  display: flex;
+  border: 1px solid black;
+}
+
+.wrap-hidden {
+  display: none;
+}
+
+.wrap::before {
+  transform-origin: top left;
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: 2px;
+  text-align: center;
+  height: 1.5rem;
+}
+
+#primary-view-wrap {
+  height: calc(10rem + 2px);
+}
+
+#primary-view-wrap::before {
+  background-color: oklch(66.13% 0.066 140.64);
+  content: "input";
+  width: 10rem;
+  transform: rotate(-90deg) translateX(-10rem);
+}
+
+#incremental-view-wrap {
+  height: calc(6rem + 2px);
+}
+
+#incremental-view-wrap::before {
+  background-color: oklch(66.13% 0.066 140.64);
+  content: "input";
+  width: 6rem;
+  transform: rotate(-90deg) translateX(-6rem);
+}
+
+#twelf-response-wrap {
+  height: calc(10rem + 2px);
+}
+
+#twelf-response-wrap::before {
+  background-color: oklch(35.91% 0.066 140.64);
+  content: "output";
+  width: 10rem;
+  transform: rotate(-90deg) translateX(-10rem);
+}
+
+#twelf-response {
+  padding-left: calc(1.5rem + 5px);
+}
+
+textarea {
+  font-family: monospace;
+  padding-left: calc(1.5rem + 5px);
+  width: 100%;
+  resize: none;
+  border: none;
+}
+
+button {
+  display: block;
+}
+
+label {
+  padding-left: 0.5rem;
+}
